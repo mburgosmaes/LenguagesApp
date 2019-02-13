@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/city1">
@@ -13,11 +14,11 @@
         android:src="@drawable/logo1" />
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="25dp"
+        android:layout_centerHorizontal="false"
+        android:layout_marginLeft="100dp"
         android:layout_marginTop="520dp"
-        android:layout_marginRight="25dp"
         android:background="@color/colorAccent"
         android:orientation="horizontal">
 
@@ -25,25 +26,37 @@
             android:id="@+id/login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
             android:background="@drawable/border"
             android:gravity="center"
-            android:padding="15dp"
-            android:text="Login"
+            android:paddingLeft="35dp"
+            android:paddingTop="15dp"
+            android:paddingRight="35dp"
+            android:paddingBottom="15dp"
+            android:text="@string/login"
             android:textColor="#fff"
             android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="false"
+        android:layout_marginLeft="220dp"
+        android:layout_marginTop="520dp"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/registre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
             android:background="@drawable/border"
             android:gravity="center"
-            android:padding="15dp"
-            android:text="SignUp"
+            android:paddingLeft="35dp"
+            android:paddingTop="15dp"
+            android:paddingRight="35dp"
+            android:paddingBottom="15dp"
+            android:text="@string/singup"
             android:textColor="#fff"
             android:textStyle="bold" />
     </LinearLayout>
@@ -52,7 +65,9 @@
         android:id="@+id/lnrlyout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
         android:layout_marginTop="280dp"
+        android:layout_marginRight="25dp"
         android:background="@color/colorAccent"
         android:gravity="center"
         android:paddingLeft="25dp"
@@ -81,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:background="#00000000"
-                    android:hint="Username"
+                    android:hint="@string/user"
                     android:inputType="text"
                     android:letterSpacing="0.1"
                     android:textColor="#fff"
@@ -112,7 +127,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
                     android:background="#00000000"
-                    android:hint="Password"
+                    android:hint="@string/pwd"
                     android:inputType="textPassword"
                     android:letterSpacing="0.1"
                     android:textColor="#fff"

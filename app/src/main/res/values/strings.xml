@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">LenguagesApp</string>
-    <string name="user">User name</string>
+    <string name="user">Username</string>
     <string name="pwd">Password</string>
-    <string name="login">Login in</string>
+    <string name="login">Login</string>
+    <string name="singup">SingUp</string>
+    <string name="mail">Email Address</string>
+    <string name="mobile">Mobile Number</string>
 </resources>
