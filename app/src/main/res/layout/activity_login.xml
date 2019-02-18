@@ -6,7 +6,7 @@
     android:background="@drawable/city1">
 
     <ImageView
-        android:id="@+id/imgvw"
+        android:id="@+id/img_logo"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_centerHorizontal="true"
@@ -23,7 +23,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/login"
+            android:id="@+id/tv_login"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
@@ -47,7 +47,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/registre"
+            android:id="@+id/tv_registre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
@@ -146,13 +146,13 @@
         android:id="@+id/nombrelogo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/imgvw"
+        android:layout_below="@+id/img_logo"
         android:layout_alignBottom="@+id/lnrlyout"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="39dp"
         android:gravity="top|center"
-        android:text="Immac Bytes"
+        android:text="@string/app"
         android:textColor="#fff"
         android:textSize="30dp"
         android:textStyle="bold" />

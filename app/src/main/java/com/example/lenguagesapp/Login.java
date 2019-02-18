@@ -17,10 +17,10 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-    nombrelogo  = findViewById(R.id.nombrelogo);
-    registre = findViewById(R.id.registre);
-    user        = findViewById(R.id.user);
-    pwd         = findViewById(R.id.pwd);
+    nombrelogo   = findViewById(R.id.nombrelogo);
+    registre     = findViewById(R.id.tv_registre);
+    user         = findViewById(R.id.user);
+    pwd          = findViewById(R.id.pwd);
 
 
         registre.setOnClickListener(new View.OnClickListener()

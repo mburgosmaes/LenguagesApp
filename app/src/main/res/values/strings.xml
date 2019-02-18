@@ -6,4 +6,5 @@
     <string name="singup">SingUp</string>
     <string name="mail">Email Address</string>
     <string name="mobile">Mobile Number</string>
+    <string name="app">OkeyListen</string>
 </resources>
