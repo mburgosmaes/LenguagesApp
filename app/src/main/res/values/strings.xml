@@ -1,10 +1,65 @@
 <resources>
     <string name="app_name">LenguagesApp</string>
-    <string name="user">Username</string>
-    <string name="pwd">Password</string>
-    <string name="login">Login</string>
-    <string name="singup">SingUp</string>
-    <string name="mail">Email Address</string>
-    <string name="mobile">Mobile Number</string>
-    <string name="app">OkeyListen</string>
+    <string name="hint_user_login">Name</string>
+    <string name="hint_pass_login">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_singup">Register</string>
+    <string name="hint_mail">Email Address</string>
+    <string name="hint_surname">Surname</string>
+    <string name="hint_type">Type</string>
+    <string name="name_app">OkeyListen</string>
+    <string name="desc_img_logo">Imagen del logo de la app</string>
+    <string name="empty_email">El email no puede estar vacío</string>
+    <string name="empty_pass">La contraseña no puede estar vacía</string>
+    <string name="btn_cancel">CANCELAR</string>
+    <string name="title_dialog_register">REGISTRO</string>
+    <string name="text_dialog_register">Por favor, completa todos los campos</string>
+    <string name="img_mail1_login">Icono representando un sobre</string>
+    <string name="img_user_login">Icono representando una persona</string>
+    <string name="img_pass_login">Icono representando un candado</string>
+    <string name="img_surname_login">Icono representando una persona</string>
+    <string name="texto_login">El conocimiento de idiomas es la puerta a la sabiduría</string>
+    <string name="desc_cursos">DESCRIPCIÓN</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_menu">menu</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="Inicio">Inicio</string>
+    <string name="Juegos">Juegos</string>
+    <string name="Temarios">Temarios</string>
+    <string name="Chats">Chats</string>
+
+    <string name="btn_salir">SALIR</string>
+
+    <string name="curso">CURSOS</string>
+    <string name="titulo_curso">TITULO</string>
+    <string name="idioma_curso">IDIOMA</string>
+    <string name="estado_curso">ESTADO</string>
+    <string name="horas_curso">HORAS TOTALES</string>
+    <string name="creador_curso">CREADOR</string>
+    <string name="btn_incripcion">INSCRIBIRSE</string>
+
+    <string name="nivel_Temarios">Nivel</string>
+    <string name="descripcion_Temarios">Descripcion</string>
+
+
+    <string-array name="tipo_user">
+        <item>ALUMNO</item>
+        <item>PROFESOR</item>
+    </string-array>
+
+    <string name="btn_actividades">JUEGOS</string>
+    <string name="btn_video">CLASES</string>
+    <string name="btn_examen">EXAMEN</string>
+    <string name="btn_entrar">ENTRAR</string>
+    <string name="btn_cursos">CURSOS</string>
+    <string name="btn_ver_videos">VER CLASE</string>
+    <string name="btn_atras">ATRAS</string>
+
+    <string name="ALUMNO_NAME">ALUMNO</string>
+    <string name="PROFESOR_NAME">PROFESOR</string>
+
 </resources>

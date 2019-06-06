@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lenguagesapp">
+    package="com.proyecto.appproyectointegrado">
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,14 +11,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".registre_activity" />
-        <activity android:name=".Login">
+        <activity android:name="com.proyectointegrado.ClasesVideos.TemariosVideo"></activity>
+        <activity android:name="com.proyectointegrado.Cursos.Curso_seleccionado" />
+        <activity android:name="com.proyectointegrado.Actividades.Actividades" />
+        <activity android:name="com.proyectointegrado.Cursos.Cursos_inicio" />
+        <activity
+            android:name="com.proyectointegrado.MenuPrincipal.ActivityPrincipalMenu"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.proyectointegrado.Exercises.DragAndDrop" />
+        <activity android:name="com.proyectointegrado.Principal.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.proyectointegrado.Login.Registre_activity"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name="com.proyectointegrado.Login.Login_activity" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
