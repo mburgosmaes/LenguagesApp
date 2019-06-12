@@ -11,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.proyectointegrado.ClasesVideos.TemariosVideo"></activity>
-        <activity android:name="com.proyectointegrado.Cursos.Curso_seleccionado" />
+        <activity android:name="com.proyectointegrado.Cursos.Curso_seleccionado"></activity>
         <activity android:name="com.proyectointegrado.Actividades.Actividades" />
         <activity android:name="com.proyectointegrado.Cursos.Cursos_inicio" />
+        <activity android:name="com.proyectointegrado.Cursos.Curso_seleccionado" />
         <activity
             android:name="com.proyectointegrado.MenuPrincipal.ActivityPrincipalMenu"
             android:label="@string/title_activity_menu"

@@ -119,7 +119,7 @@ public class Curso_seleccionado extends FragmentActivity {
         setContentView(R.layout.activity_curso_seleccionado);
 
 
-       tv_titulo = findViewById(R.id.tv_titulo_curso_c2);
+        tv_titulo = findViewById(R.id.tv_titulo_curso_c2);
         tv_fechaini = findViewById(R.id.tv_fecha_inicio_curso);
         tv_desc = findViewById(R.id.tv_desc_Curso_c2);
         tv_fechafin = findViewById(R.id.tv_fecha_fin_curso);
@@ -152,7 +152,7 @@ public class Curso_seleccionado extends FragmentActivity {
         idCurso = bundle.getString("_id_curso");
 
 
-       // nombre_user="DEFECTO";
+        // nombre_user="DEFECTO";
 
 
       /*  btn_temario.setOnClickListener(new View.OnClickListener() {
@@ -204,7 +204,7 @@ public class Curso_seleccionado extends FragmentActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         bundle = new Bundle();
         bundle.putSerializable("OBJECTOCURSO", curso);
-       // fragment = new Temarios_inicio();
+        // fragment = new Temarios_inicio();
         f.setArguments(bundle);
         fragmentTransaction.add(R.id.fragment_seleccionado_c2, f);
         fragmentTransaction.replace(R.id.fragment_seleccionado_c2, f);
@@ -281,26 +281,26 @@ public class Curso_seleccionado extends FragmentActivity {
 
                                 Iterator<?> objectContenido = dataSubtemario.keys();
 
-                                    while (objectContenido.hasNext())
+                                while (objectContenido.hasNext())
+                                {
+
+                                    String keyConte = (String) objectContenido.next();
+
+
+                                    if (dataSubtemario.get(keyConte) instanceof JSONObject)
                                     {
+                                        //Valores de las claves de curso.
+                                        JSONObject dataContenido = new JSONObject(dataSubtemario.get(keyConte).toString());
 
-                                        String keyConte = (String) objectContenido.next();
+                                        contenido = new Contenido();
+                                        listContenidos = new ArrayList<>();
 
-
-                                        if (dataSubtemario.get(keyConte) instanceof JSONObject)
+                                        try
                                         {
-                                            //Valores de las claves de curso.
-                                            JSONObject dataContenido = new JSONObject(dataSubtemario.get(keyConte).toString());
 
-                                            contenido = new Contenido();
-                                            listContenidos = new ArrayList<>();
-
-                                            try
-                                            {
-
-                                                contenido.setTextoCon(dataContenido.getString("Texto"));
-                                                contenido.setUrlCon(dataContenido.getString("UrlVideo"));
-                                                contenido.setTipoCon(dataContenido.getString("Tipo"));
+                                            contenido.setTextoCon(dataContenido.getString("Texto"));
+                                            contenido.setUrlCon(dataContenido.getString("UrlVideo"));
+                                            contenido.setTipoCon(dataContenido.getString("Tipo"));
 
 
 
@@ -320,116 +320,116 @@ public class Curso_seleccionado extends FragmentActivity {
 
                                                     }*/
 
-                                                }
-                                            catch (Exception e3)
-                                            {
-
-                                            }
-
-
-                                            JSONArray arrayActividades =dataContenido.getJSONArray("Actividad");
-
-                                            for (int a = 0; a < arrayActividades.length(); a++)
-                                            {
-                                                JSONObject dataActividad = arrayActividades.getJSONObject(a);
-                                                actividad = new Actividad();
-                                                log("ACTIVIDAD: " + dataActividad);
-
-                                                listActividadEjTest = new ArrayList<>();
-
-
-                                               Iterator<?> objectEjTest = dataActividad.keys();
-
-                                                while (objectEjTest.hasNext())
-                                                {
-                                                    String keyEjTest = (String) objectEjTest.next();
-
-                                                    if (dataActividad.get(keyEjTest) instanceof JSONObject) {
-                                                        JSONObject dataEjTest = new JSONObject(dataActividad.get(keyEjTest).toString());
-                                                        Log.i(TAG, "doInBackground: EJTEEEST: "+dataEjTest.toString());
-
-                                                        actividadEjTest = new ActividadEjTest();
-                                                        listActividadEjTest = new ArrayList<>();
-
-                                                        try {
-                                                            JSONArray arrayImagenes = dataEjTest.getJSONArray("Imagenes");
-
-                                                            for (int ai = 0; ai < arrayImagenes.length(); ai++) {
-                                                                JSONObject dataImagenes = arrayImagenes.getJSONObject(ai);
-                                                                log("IMAGENEEEES:" + dataImagenes.toString());
-
-                                                                actividadEjTestImagenes = new ActividadEjTestImagenes();
-                                                                //listEjTestImagenes = new ArrayList<>();
-
-                                                                actividadEjTestImagenes.setUrlActividadEjTestImagenes(dataImagenes.getString("Url"));
-                                                                actividadEjTestImagenes.setIndiceActividadEjTestImagenes(dataImagenes.getInt("Indice"));
-
-                                                                listEjTestImagenes.add(actividadEjTestImagenes);
-
-                                                            }
-                                                        }
-                                                        catch (Exception eji)
-                                                        {
-                                                            
-                                                        }
-                                                        actividadEjTest.setListActividadEjTestImagenes(listEjTestImagenes);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                                        //TODO OK
-                                                        listActividadEjTest.add(actividadEjTest);
-
-                                                        actividad.setListActividadEjTest(listActividadEjTest);
-                                                    }
-                                                }
-                                                actividad.setListActividadEjTest(listActividadEjTest);
-
-                                                listCActividades.add(actividad);
-
-                                                contenido.setListActividades(listCActividades);
-
-                                            }
-                                            listContenidos.add(contenido);
                                         }
+                                        catch (Exception e3)
+                                        {
+
+                                        }
+
+
+                                        JSONArray arrayActividades =dataContenido.getJSONArray("Actividad");
+
+                                        for (int a = 0; a < arrayActividades.length(); a++)
+                                        {
+                                            JSONObject dataActividad = arrayActividades.getJSONObject(a);
+                                            actividad = new Actividad();
+                                            log("ACTIVIDAD: " + dataActividad);
+
+                                            listActividadEjTest = new ArrayList<>();
+
+
+                                            Iterator<?> objectEjTest = dataActividad.keys();
+
+                                            while (objectEjTest.hasNext())
+                                            {
+                                                String keyEjTest = (String) objectEjTest.next();
+
+                                                if (dataActividad.get(keyEjTest) instanceof JSONObject) {
+                                                    JSONObject dataEjTest = new JSONObject(dataActividad.get(keyEjTest).toString());
+                                                    Log.i(TAG, "doInBackground: EJTEEEST: "+dataEjTest.toString());
+
+                                                    actividadEjTest = new ActividadEjTest();
+                                                    listActividadEjTest = new ArrayList<>();
+
+                                                    try {
+                                                        JSONArray arrayImagenes = dataEjTest.getJSONArray("Imagenes");
+
+                                                        for (int ai = 0; ai < arrayImagenes.length(); ai++) {
+                                                            JSONObject dataImagenes = arrayImagenes.getJSONObject(ai);
+                                                            log("IMAGENEEEES:" + dataImagenes.toString());
+
+                                                            actividadEjTestImagenes = new ActividadEjTestImagenes();
+                                                            //listEjTestImagenes = new ArrayList<>();
+
+                                                            actividadEjTestImagenes.setUrlActividadEjTestImagenes(dataImagenes.getString("Url"));
+                                                            actividadEjTestImagenes.setIndiceActividadEjTestImagenes(dataImagenes.getInt("Indice"));
+
+                                                            listEjTestImagenes.add(actividadEjTestImagenes);
+
+                                                        }
+                                                    }
+                                                    catch (Exception eji)
+                                                    {
+
+                                                    }
+                                                    actividadEjTest.setListActividadEjTestImagenes(listEjTestImagenes);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                    //TODO OK
+                                                    listActividadEjTest.add(actividadEjTest);
+
+                                                    actividad.setListActividadEjTest(listActividadEjTest);
+                                                }
+                                            }
+                                            actividad.setListActividadEjTest(listActividadEjTest);
+
+                                            listCActividades.add(actividad);
+
+                                            contenido.setListActividades(listCActividades);
+
+                                        }
+                                        listContenidos.add(contenido);
                                     }
+                                }
 
                                 subtemario.setListContenido(listContenidos);
                                 listSubtemarios.add(subtemario);
 
                             }
 
-                                temario.setListSubtemarios(listSubtemarios);
-                                listTemarios.add(temario);
-                            }
+                            temario.setListSubtemarios(listSubtemarios);
+                            listTemarios.add(temario);
+                        }
 
-                            for (int x = 0; x < jsonArrayUsers.length(); x++) {
-                                JSONObject dataCursoUser = jsonArrayUsers.getJSONObject(x);
-                                user = new Users();
+                        for (int x = 0; x < jsonArrayUsers.length(); x++) {
+                            JSONObject dataCursoUser = jsonArrayUsers.getJSONObject(x);
+                            user = new Users();
 
-                                user.setId_user(dataCursoUser.getString("IdUsuario"));
-                                user.setType(dataCursoUser.getString("Tipo"));
+                            user.setId_user(dataCursoUser.getString("IdUsuario"));
+                            user.setType(dataCursoUser.getString("Tipo"));
 
-                                listUser.add(user);
-
-                            }
-
-                            curso.setListTemarios(listTemarios);
-                            curso.setListUsuarios(listUser);
-                            log("CURSO MONTADO3: " + curso.toString());
+                            listUser.add(user);
 
                         }
+
+                        curso.setListTemarios(listTemarios);
+                        curso.setListUsuarios(listUser);
+                        log("CURSO MONTADO3: " + curso.toString());
+
                     }
+                }
                 if (responseStr != null) {
                     ALLOK = "si";
                 }
@@ -437,7 +437,7 @@ public class Curso_seleccionado extends FragmentActivity {
             }
             catch (JSONException | IOException e)
             {
-               // e.printStackTrace();
+                // e.printStackTrace();
                 //log(e.getMessage());
                 ALLOK="no";
             }

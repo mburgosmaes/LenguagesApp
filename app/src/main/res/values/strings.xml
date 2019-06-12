@@ -56,10 +56,10 @@
     <string name="btn_examen">EXAMEN</string>
     <string name="btn_entrar">ENTRAR</string>
     <string name="btn_cursos">CURSOS</string>
-    <string name="btn_ver_videos">VER CLASE</string>
-    <string name="btn_atras">ATRAS</string>
 
     <string name="ALUMNO_NAME">ALUMNO</string>
     <string name="PROFESOR_NAME">PROFESOR</string>
+    <string name="btn_atras">ATRAS</string>
+    <string name="infoBloc">Notas</string>
 
 </resources>

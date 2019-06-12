@@ -58,6 +58,6 @@ dependencies {
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation 'org.codehaus.jackson:jackson-mapper-asl:1.9.11'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
-    implementation 'com.google.apis:google-api-services-youtube:v3-rev181-1.22.0'
-    implementation files('C:/Users/ADOLFO/Documents/Android/LenguagesApp/YouTubeAndroidPlayerApi.jar')
+    implementation files('C:\\Users\\ADOLFO\\Desktop\\YoutubeAndroidPlayerApi.jar')
 }
+

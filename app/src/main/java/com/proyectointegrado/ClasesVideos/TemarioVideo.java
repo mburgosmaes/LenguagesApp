@@ -20,14 +20,14 @@ import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerFragment;
+import com.google.android.youtube.player.YouTubePlayerSupportFragment;
 import com.google.android.youtube.player.YouTubePlayerView;
-import com.google.api.services.youtube.YouTube;
 import com.proyecto.appproyectointegrado.R;
 import com.proyectointegrado.Database_manager.Cursos;
 
 import java.io.IOException;
 
-public class TemarioVideo extends YouTubeBaseActivity {
+public class TemarioVideo extends YouTubeBaseActivity implements YouTubePlayer.OnInitializedListener {
 
     YouTubePlayerView mYoutubePlayerView;
     YouTubePlayer.OnInitializedListener mOnInitializedListener;
@@ -37,14 +37,48 @@ public class TemarioVideo extends YouTubeBaseActivity {
     private static VideoView vVideo;
     private static Button btn_ver;
     private static String [] urlY;
+    private static String url;
+
+    YouTubePlayerFragment myFragment;
+
+    @Override
+    public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+
+    }
+
+    @Override
+    public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+        /*Bundle bundle = getArguments();
+
+        curso = (Cursos) bundle.getSerializable("OBJECTOCURSO");*/
+
+        btn_ver = findViewById(R.id.btn_ver);
+       // myFragment = (YouTubePlayerFragment) findViewById(R.id.fragment_seleccionado_c2);
+       // myFragment.initialize(YoutubeConfig.getApiKey(),this);
+
+        Log.i(TAG, "onCreateView: CURSO OBTENIDO:"+curso.toString());
+
+        // vVideo = rootView.findViewById(R.id.videoView_temarioVideos);
+
+        urlY=curso.getListTemarios().get(0)
+                .getListSubtemarios().get(0).getListContenido().get(0).getUrlCon().split("=");
+
+        String url = urlY[1];
+        Log.i(TAG, "onCreateView: URL: "+url);
+
+         mYoutubePlayerView =(YouTubePlayerView) findViewById(R.id.view_youtubePlayer);
+
     }
 
-    /*@Nullable
+  /*  @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
@@ -62,33 +96,15 @@ public class TemarioVideo extends YouTubeBaseActivity {
         urlY=curso.getListTemarios().get(0)
                 .getListSubtemarios().get(0).getListContenido().get(0).getUrlCon().split("=");
 
-        String url = urlY[1];
+        url = urlY[1];
         Log.i(TAG, "onCreateView: URL: "+url);
 
 
-      //  mYoutubePlayerView =(YouTubePlayerView) rootView.findViewById(R.id.view_youtubePlayer);
+        mYoutubePlayerView =(YouTubePlayerView) rootView.findViewById(R.id.view_youtubePlayer);
+        YouTubePlayerSupportFragment youTubePlayerSupportFragment =
 
-        mOnInitializedListener = new YouTubePlayer.OnInitializedListener() {
-            @Override
-            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+        mYoutubePlayerView.initialize(YoutubeConfig.getApiKey(),mOnInitializedListener);
 
-                youTubePlayer.loadVideo(url);
-            }
-
-            @Override
-            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-
-            }
-        };
-
-        btn_ver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                mYoutubePlayerView.initialize(YoutubeConfig.getApiKey(),mOnInitializedListener);
-
-            }
-        });
 
 
         return rootView;
