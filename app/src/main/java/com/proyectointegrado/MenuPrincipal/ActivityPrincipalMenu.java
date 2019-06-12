@@ -2,6 +2,7 @@ package com.proyectointegrado.MenuPrincipal;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -14,6 +15,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ImageView;
+import android.view.View;
 
 import com.proyecto.appproyectointegrado.R;
 import com.proyectointegrado.MenuPrincipal.SectionsPagerAdapter;
@@ -22,6 +26,8 @@ public class ActivityPrincipalMenu extends AppCompatActivity {
 
     EditText txtBloc;
     SharedPreferences pref;
+    Intent op2;
+    ImageView imagenBloc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +42,16 @@ public class ActivityPrincipalMenu extends AppCompatActivity {
         setContentView(R.layout.activity_notas);
 
         //Notas
-        txtBloc =  findViewById(R.id.txtBloc);
-        pref = getSharedPreferences("ficheroconfiguracion", Context.MODE_PRIVATE);
-        txtBloc.setText(pref.getString("BlocDeNotas", ""));
-        SharedPreferences.Editor editor = pref.edit();
-        editor.putString("BlocDeNotas", txtBloc.getText().toString());
-        editor.commit();
+        op2 = new Intent(this, BlocDeNotas.class);
+        imagenBloc=findViewById(R.id.imagenBloc);
 
+        imagenBloc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent bloc = new Intent(ActivityPrincipalMenu.this, BlocDeNotas.class);
+                startActivity(bloc);
+            }
+        });
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,16 +63,18 @@ public class ActivityPrincipalMenu extends AppCompatActivity {
     @SuppressLint("RestrictedApi")
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.notas, menu);
+        getMenuInflater().inflate(R.menu.principal, menu);
         MenuBuilder m = (MenuBuilder) menu;
         m.setOptionalIconsVisible(true);
         return true;
     }
+    @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
-        SharedPreferences.Editor editor = pref.edit();
-        editor.putString("Notas", txtBloc.getText().toString());
-        editor.commit();
+        switch (item.getItemId())
+        {
+            case R.id.opcion2: startActivity(op2);break;
+        }
         return false;
     }
 }
