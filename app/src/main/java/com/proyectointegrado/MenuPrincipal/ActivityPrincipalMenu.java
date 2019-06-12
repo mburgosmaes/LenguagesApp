@@ -33,6 +33,7 @@ public class ActivityPrincipalMenu extends AppCompatActivity {
         TabLayout tabs = findViewById(R.id.tabs);
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
+        setContentView(R.layout.activity_notas);
 
         //Notas
         txtBloc =  findViewById(R.id.txtBloc);
