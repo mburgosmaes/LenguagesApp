@@ -62,7 +62,7 @@ public class TemarioVideo extends YouTubeBaseActivity implements YouTubePlayer.O
 
         btn_ver = findViewById(R.id.btn_ver);
        // myFragment = (YouTubePlayerFragment) findViewById(R.id.fragment_seleccionado_c2);
-       // myFragment.initialize(YoutubeConfig.getApiKey(),this);
+       /// myFragment.initialize(YoutubeConfig.getApiKey(),this);
 
         Log.i(TAG, "onCreateView: CURSO OBTENIDO:"+curso.toString());
 
