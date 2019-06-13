@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.proyectointegrado.MenuPrincipal.ActivityPrincipalMenu">
-
-    <EditText
-        android:id="@+id/txtBloc"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:ems="10"
-        android:gravity="top"
-        android:hint="@string/infoBloc"
-        android:inputType="textMultiLine" />
-</LinearLayout>
+        tools:context="com.proyectointegrado.Cursos.Cursos_inicio">
+
+        <EditText
+            android:id="@+id/txtBloc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:gravity="top"
+            android:hint="@string/infoBloc"
+            android:inputType="textMultiLine" />
+    </LinearLayout>

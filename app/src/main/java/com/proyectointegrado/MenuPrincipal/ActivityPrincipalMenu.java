@@ -36,13 +36,6 @@ public class ActivityPrincipalMenu extends AppCompatActivity {
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
 
-        FloatingActionButton fab1 = findViewById(R.id.fab1);
-        fab1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                startActivity(new Intent(ActivityPrincipalMenu.this,BlocDeNotas.class));
-            }
-        });
-
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +47,7 @@ public class ActivityPrincipalMenu extends AppCompatActivity {
     @SuppressLint("RestrictedApi")
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.notas, menu);
+        getMenuInflater().inflate(R.menu.principal, menu);
         MenuBuilder m = (MenuBuilder) menu;
         m.setOptionalIconsVisible(true);
         return true;

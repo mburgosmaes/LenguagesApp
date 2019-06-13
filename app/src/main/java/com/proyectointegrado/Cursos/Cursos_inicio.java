@@ -11,6 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.proyecto.appproyectointegrado.R;
 import com.proyectointegrado.Database_manager.Cursos;
@@ -30,6 +33,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cursos_inicio extends AppCompatActivity {
+    //Notas
+    ImageView imagenBloc;
 
     private static Intent i;
     private static DefaultHttpClient client;
@@ -91,6 +96,15 @@ public class Cursos_inicio extends AppCompatActivity {
 
 
         new ExecuteTask_ObtenerCursosInscritos().execute();
+        //Notas
+        imagenBloc      = findViewById(R.id.imagenBloc);
+        imagenBloc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent bloc = new Intent(Cursos_inicio.this, BlocDeNotas.class);
+                startActivity(bloc);
+            }
+        });
     }
 
     private class ExecuteTask_ObtenerCursosInscritos extends AsyncTask<String, String, List<Cursos> > {
@@ -183,4 +197,5 @@ public class Cursos_inicio extends AppCompatActivity {
 
         return curso;
     }
+
 }

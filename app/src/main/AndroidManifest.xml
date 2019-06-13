@@ -19,7 +19,7 @@
             android:name="com.proyectointegrado.MenuPrincipal.ActivityPrincipalMenu"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.proyectointegrado.MenuPrincipal.BlocDeNotas"/>
+        <activity android:name="com.proyectointegrado.Cursos.BlocDeNotas"/>
         <activity android:name="com.proyectointegrado.Exercises.DragAndDrop" />
         <activity android:name="com.proyectointegrado.Principal.SplashActivity">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.proyectointegrado.MenuPrincipal;
+package com.proyectointegrado.Cursos;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -45,4 +45,3 @@ public class BlocDeNotas extends AppCompatActivity {
         return false;
     }
 }
-

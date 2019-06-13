@@ -12,7 +12,7 @@ import android.widget.EditText;
 
 import com.proyecto.appproyectointegrado.R;
 
-class BlocDeNotas extends AppCompatActivity {
+class BlocNotas extends AppCompatActivity {
 
     EditText txtBloc;
     SharedPreferences pref;

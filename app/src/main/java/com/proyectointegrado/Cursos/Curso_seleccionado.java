@@ -1,15 +1,24 @@
 package com.proyectointegrado.Cursos;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.view.menu.MenuBuilder;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.proyecto.appproyectointegrado.R;
@@ -31,6 +40,7 @@ import com.proyectointegrado.Database_manager.Subtemarios;
 import com.proyectointegrado.Database_manager.Temario;
 import com.proyectointegrado.Database_manager.Users;
 import com.proyectointegrado.Database_manager.Utils;
+import com.proyectointegrado.MenuPrincipal.ActivityPrincipalMenu;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -47,6 +57,10 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Curso_seleccionado extends FragmentActivity {
+
+    //Notas
+    //nota
+    Button btnNotas;
 
     private static String _idUser, tipoUser, nombreUser, apeUser, emailUser;
     Button btn_actividades,  btn_temario, btn_examen;
@@ -109,14 +123,12 @@ public class Curso_seleccionado extends FragmentActivity {
     ExamenExTestOpcionesOp examenExTestOpcionesOp;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_curso_seleccionado);
+        setContentView(R.layout.activity_cursos_inicio);
 
 
         tv_titulo = findViewById(R.id.tv_titulo_curso_c2);
