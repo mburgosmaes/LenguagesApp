@@ -2,6 +2,7 @@ package com.proyectointegrado.MenuPrincipal;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -27,6 +28,7 @@ public class ActivityPrincipalMenu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_cursos_inicio);
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(sectionsPagerAdapter);
@@ -34,13 +36,12 @@ public class ActivityPrincipalMenu extends AppCompatActivity {
         tabs.setupWithViewPager(viewPager);
         FloatingActionButton fab = findViewById(R.id.fab);
 
-        //Notas
-        txtBloc =  findViewById(R.id.txtBloc);
-        pref = getSharedPreferences("ficheroconfiguracion", Context.MODE_PRIVATE);
-        txtBloc.setText(pref.getString("BlocDeNotas", ""));
-        SharedPreferences.Editor editor = pref.edit();
-        editor.putString("BlocDeNotas", txtBloc.getText().toString());
-        editor.commit();
+        FloatingActionButton fab1 = findViewById(R.id.fab1);
+        fab1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(ActivityPrincipalMenu.this,BlocDeNotas.class));
+            }
+        });
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -174,9 +174,9 @@ public class Curso_seleccionado extends FragmentActivity {
         btn_temario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment f = new TemarioVideo();
+               // Fragment f = new TemarioVideo();
 
-                cambiarFragment(f);
+               // cambiarFragment(f);
             }
         });
 

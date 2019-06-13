@@ -60,6 +60,7 @@
     <string name="ALUMNO_NAME">ALUMNO</string>
     <string name="PROFESOR_NAME">PROFESOR</string>
     <string name="btn_atras">ATRAS</string>
-    <string name="infoBloc">Notas</string>
+    <string name="infoBloc">Escribe aqui . . .</string>
+    <string name="blocDeNota">Notas</string>
 
 </resources>
