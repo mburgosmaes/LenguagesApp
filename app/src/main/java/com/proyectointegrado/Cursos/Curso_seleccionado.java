@@ -58,10 +58,6 @@ import java.util.List;
 
 public class Curso_seleccionado extends FragmentActivity {
 
-    //Notas
-    //nota
-    Button btnNotas;
-
     private static String _idUser, tipoUser, nombreUser, apeUser, emailUser;
     Button btn_actividades,  btn_temario, btn_examen;
     TextView tv_titulo, tv_fechaini, tv_desc, tv_idioma, tv_fechafin;
@@ -128,7 +124,7 @@ public class Curso_seleccionado extends FragmentActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_curso_seleccionado);
-        setContentView(R.layout.activity_cursos_inicio);
+        //setContentView(R.layout.activity_cursos_inicio);
 
 
         tv_titulo = findViewById(R.id.tv_titulo_curso_c2);
